@@ -1,13 +1,23 @@
+import './styles/custom.sass'
+
 import Banner from "./components/Banner/Banner"
 import Category from "./components/Category/Category"
+import Filter from "./components/Filter/Filter"
 import Header from "./components/Header/Header"
+import Product from "./components/Product/Product"
 
 function App() {
   return(
     <>
       <Header />
-        <Banner />
-          <Category />
+      <Banner />
+      <Category />
+
+      <section className='section-product'>
+        <h2>Produtos relacionados</h2>
+          <Filter />
+          <Product />
+      </section>
     </>
   )
 }
