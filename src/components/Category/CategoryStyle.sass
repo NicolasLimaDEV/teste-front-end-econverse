@@ -1,0 +1,31 @@
+@use '../../styles/variables'
+  
+.nav-category
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+
+  .card-category
+    padding: 20px
+    margin: 0 10px
+    text-align: center
+
+    img
+      background-color: variables.$gray-bg
+      padding: 22px
+      width: 90px
+      border-radius: 12px
+
+      &:hover
+        cursor: pointer
+
+    p
+      font-size: 14px
+      color: variables.$black
+      font-weight: 500
+    
+      &:hover
+        color: variables.$violet-secondary
+        cursor: pointer
+      
