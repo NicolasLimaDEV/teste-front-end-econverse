@@ -1,73 +1,119 @@
-# React + TypeScript + Vite
+# 🛍️ Teste Econverse — Vaga Desenvolvedor Front-End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto desenvolvido como **teste técnico para a vaga de Desenvolvedor Front-End da Econverse**, utilizando **React, TypeScript e Sass**, com foco em componentização, responsividade, HTML semântico e boas práticas de organização.
 
-Currently, two official plugins are available:
+O layout foi desenvolvido seguindo o Figma proposto, respeitando:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* ✅ Pixel perfect
+* ✅ Componentização
+* ✅ Responsividade
+* ✅ Consumo de produtos via JSON
+* ✅ Modal com detalhes do produto
+* ✅ Carrossel de produtos
+* ✅ Uso de Sass
+* ✅ SEO básico
+* ✅ HTML semântico
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# 🚀 Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+* React
+* TypeScript
+* Vite
+* Sass
+* JSON local para mock de produtos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# 📦 Como executar o projeto na sua máquina
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 1. Clone o repositório
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/NicolasLimaDEV/teste-front-end-econverse.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 2. Acesse a pasta do projeto
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd teste-front-end-econverse
 ```
+
+## 3. Instale as dependências
+
+```bash
+npm install
+```
+
+## 4. Execute o projeto em ambiente de desenvolvimento
+
+```bash
+npm run dev
+```
+
+Após isso, abra no navegador:
+
+```bash
+http://localhost:5173
+```
+
+---
+
+# 🏗️ Gerar build de produção
+
+Para compilar a versão de produção:
+
+```bash
+npm run build
+```
+
+Para visualizar o build localmente:
+
+```bash
+npm run preview
+```
+
+---
+
+# 📁 Estrutura do projeto
+
+```bash
+src/
+ ├── assets/
+ ├── components/
+ ├── data/
+ ├── styles/
+ ├── App.tsx
+ └── main.tsx
+```
+
+---
+
+# ✨ Funcionalidades implementadas
+
+* Header responsivo
+* Barra de pesquisa
+* Banner promocional
+* Navegação por categorias
+* Carrossel de produtos com setas
+* Modal com informações do produto
+* Controle de quantidade no modal
+* Sessão de parceiros
+* Navegação por marcas
+* Newsletter
+* Layout totalmente responsivo
+
+---
+
+# 🌐 Deploy
+
+Projeto publicado na **Vercel**.
+
+> Caso necessário, basta configurar as variáveis padrão do Vite e executar o deploy.
+
+---
+
+# 👨‍💻 Autor
+
+Desenvolvido por **Nicolas Lima** como teste técnico para a vaga de Front-End na Econverse.
