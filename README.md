@@ -1,4 +1,4 @@
-# 🛍️ Teste Econverse — Vaga Desenvolvedor Front-End
+# Teste Econverse — Vaga Desenvolvedor Front-End
 
 Projeto desenvolvido como **teste técnico para a vaga de Desenvolvedor Front-End da Econverse**, utilizando **React, TypeScript e Sass**, com foco em componentização, responsividade, HTML semântico e boas práticas de organização.
 
@@ -16,7 +16,7 @@ O layout foi desenvolvido seguindo o Figma proposto, respeitando:
 
 ---
 
-# 🚀 Tecnologias utilizadas
+# Tecnologias utilizadas
 
 * React
 * TypeScript
@@ -26,7 +26,7 @@ O layout foi desenvolvido seguindo o Figma proposto, respeitando:
 
 ---
 
-# 📦 Como executar o projeto na sua máquina
+# Como executar o projeto na sua máquina
 
 ## 1. Clone o repositório
 
@@ -60,7 +60,7 @@ http://localhost:5173
 
 ---
 
-# 🏗️ Gerar build de produção
+# Gerar build de produção
 
 Para compilar a versão de produção:
 
@@ -76,7 +76,7 @@ npm run preview
 
 ---
 
-# 📁 Estrutura do projeto
+# Estrutura do projeto
 
 ```bash
 src/
@@ -90,7 +90,7 @@ src/
 
 ---
 
-# ✨ Funcionalidades implementadas
+# Funcionalidades implementadas
 
 * Header responsivo
 * Barra de pesquisa
@@ -106,7 +106,7 @@ src/
 
 ---
 
-# 🌐 Deploy
+# Deploy
 
 Projeto publicado na **Vercel**.
 
@@ -114,6 +114,6 @@ Projeto publicado na **Vercel**.
 
 ---
 
-# 👨‍💻 Autor
+# Autor
 
 Desenvolvido por **Nicolas Lima** como teste técnico para a vaga de Front-End na Econverse.
