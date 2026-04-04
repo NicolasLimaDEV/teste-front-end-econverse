@@ -7,6 +7,7 @@ import Header from "./components/Header/Header"
 import Product from "./components/Product/Product"
 import Partner from './components/Partners/Partner'
 import Brands from './components/Brands/Brands'
+import Newsletter from './components/Newsletter/Newsletter'
 
 function App() {
   return(
@@ -37,6 +38,8 @@ function App() {
           <p>Ver todos</p>
           <Product />
       </section>
+
+      <Newsletter />
 
     </>
   )
