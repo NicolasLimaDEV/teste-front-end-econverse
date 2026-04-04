@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import "./ProductStyle.sass"
 import productsData from "../../data/products.json"
+import ProductModal from "../ProductModal/ProductModal"
 
 interface Product {
   productName: string
@@ -11,9 +12,12 @@ interface Product {
 
 const ProductList = () => {
   const products: Product[] = productsData.products
+
   const [currentIndex, setCurrentIndex] = useState(0)
   const [itemsPerView, setItemsPerView] = useState(4)
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null)
 
+  // Responsividade dinâmica
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) {
@@ -31,7 +35,7 @@ const ProductList = () => {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
-  const maxIndex = products.length - itemsPerView
+  const maxIndex = Math.max(products.length - itemsPerView, 0)
 
   const nextSlide = () => {
     if (currentIndex < maxIndex) {
@@ -46,57 +50,72 @@ const ProductList = () => {
   }
 
   return (
-    <section className="carousel-wrapper">
-      <button className="arrow left" onClick={prevSlide}>
-        ‹
-      </button>
+    <>
+      <section className="carousel-wrapper">
+        <button className="arrow left" onClick={prevSlide}>
+          ‹
+        </button>
 
-      <div className="carousel-container">
-        <div
-          className="product-list"
-          style={{
-            transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-          }}
-        >
-          {products.map((product) => (
-            <div
-              className="product-card"
-              key={`${product.productName}-${product.price}`}
-              style={{ minWidth: `${100 / itemsPerView}%` }}
-            >
-              <img src={product.photo} alt={product.productName} />
-              <p>{product.descriptionShort}</p>
+        <div className="carousel-container">
+          <div
+            className="product-list"
+            style={{
+              transform: `translateX(-${
+                currentIndex * (100 / itemsPerView)
+              }%)`,
+            }}
+          >
+            {products.map((product) => (
+              <div
+                className="product-card"
+                key={`${product.productName}-${product.price}`}
+                style={{ minWidth: `${100 / itemsPerView}%` }}
+              >
+                <img src={product.photo} alt={product.productName} />
 
-              <span className="old-price">
-                R$ {(product.price * 1.1).toLocaleString("pt-BR", {
-                  minimumFractionDigits: 2,
-                })}
-              </span>
+                <p>{product.descriptionShort}</p>
 
-              <h3>
-                R$ {product.price.toLocaleString("pt-BR", {
-                  minimumFractionDigits: 2,
-                })}
-              </h3>
+                <span className="old-price">
+                  R$ {(product.price * 1.1).toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2,
+                  })}
+                </span>
 
-              <small>
-                ou 2x de R$ {(product.price / 2).toLocaleString("pt-BR", {
-                  minimumFractionDigits: 2,
-                })} sem juros
-              </small>
+                <h3>
+                  R$ {product.price.toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2,
+                  })}
+                </h3>
 
-              <span className="shipping">Frete grátis</span>
+                <small>
+                  ou 2x de R${" "}
+                  {(product.price / 2).toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2,
+                  })}{" "}
+                  sem juros
+                </small>
 
-              <button>COMPRAR</button>
-            </div>
-          ))}
+                <span className="shipping">Frete grátis</span>
+
+                <button onClick={() => setSelectedProduct(product)}>
+                  COMPRAR
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <button className="arrow right" onClick={nextSlide}>
-        ›
-      </button>
-    </section>
+        <button className="arrow right" onClick={nextSlide}>
+          ›
+        </button>
+      </section>
+
+      {/* Modal */}
+      <ProductModal
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
+    </>
   )
 }
 
