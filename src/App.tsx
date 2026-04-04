@@ -6,6 +6,7 @@ import Filter from "./components/Filter/Filter"
 import Header from "./components/Header/Header"
 import Product from "./components/Product/Product"
 import Partner from './components/Partners/Partner'
+import Brands from './components/Brands/Brands'
 
 function App() {
   return(
@@ -21,7 +22,7 @@ function App() {
       </section>
 
       <Partner />
-      
+
       <section className='section-product'>
         <h2>Produtos relacionados</h2>
           <p>Ver todos</p>
@@ -29,6 +30,13 @@ function App() {
       </section>
 
       <Partner />
+      <Brands />
+
+      <section className='section-product'>
+        <h2>Produtos relacionados</h2>
+          <p>Ver todos</p>
+          <Product />
+      </section>
 
     </>
   )
