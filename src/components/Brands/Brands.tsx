@@ -1,5 +1,5 @@
 import "./BrandStyle.sass"
-import BrandLogo from "../../assets/logo.png"
+import BrandLogo from "../../assets/Logo.png"
 
 const brands = [1, 2, 3, 4, 5]
 
